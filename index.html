@@ -138,8 +138,8 @@ nav {
 
 /* SECTION HELPERS */
 .wrap { padding: 6rem 3rem; }
-.eyebrow { display: flex; align-items: center; gap: 1rem; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 3.5rem; }
-.eyebrow .n { font-family: var(--fd); font-style: italic; font-size: .88rem; color: var(--gold); }
+.eyebrow { display: flex; align-items: center; gap: 1rem; font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 3.5rem; }
+.eyebrow .n { font-family: var(--fd); font-style: italic; font-size: 1rem; color: var(--gold); }
 .eyebrow::after { content: ''; flex: 1; height: 1px; background: rgba(15,14,11,.11); }
 
 /* ABOUT */
@@ -153,11 +153,11 @@ nav {
 .about-lede strong { color: var(--ink); font-weight: 700; }
 .about-timeline { display: flex; flex-direction: column; gap: .9rem; padding-top: 1.5rem; margin-top: .5rem; border-top: 1px solid rgba(15,14,11,.1); }
 .tl-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: baseline; }
-.tl-date { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; font-family: var(--fd); font-style: italic; }
-.tl-role { font-size: .82rem; color: var(--ink2); line-height: 1.4; }
+.tl-date { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; font-family: var(--fd); font-style: italic; }
+.tl-role { font-size: .98rem; color: var(--ink2); line-height: 1.4; }
 .tl-role strong { font-weight: 500; color: var(--ink); }
 .pill-row { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .5rem; }
-.pill-row span { font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; border: 1px solid rgba(15,14,11,.16); border-radius: 999px; padding: .3rem .82rem; color: var(--ink2); }
+.pill-row span { font-size: .92rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid rgba(15,14,11,.16); border-radius: 999px; padding: .45rem 1rem; color: var(--ink2); }
 
 /* WORK */
 #work { background: var(--cream2); }
@@ -181,15 +181,15 @@ nav {
 .proj-row > * { position: relative; z-index: 1; }
 
 .proj-left { display: flex; flex-direction: column; gap: .3rem; padding-top: .1rem; }
-.p-n { font-family: var(--fd); font-style: italic; font-size: .85rem; color: var(--muted); margin-bottom: .15rem; transition: color .3s; }
-.p-title { font-family: var(--fd); font-size: clamp(1.25rem, 1.8vw, 1.65rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; transition: color .3s; }
-.p-cat { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; margin-top: .15rem; transition: color .3s; }
+.p-n { font-family: var(--fd); font-style: italic; font-size: 1rem; color: var(--muted); margin-bottom: .15rem; transition: color .3s; }
+.p-title { font-family: var(--fd); font-size: clamp(1.45rem, 2vw, 1.85rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; transition: color .3s; }
+.p-cat { font-size: .84rem; letter-spacing: .14em; text-transform: uppercase; margin-top: .15rem; transition: color .3s; }
 .p-proof { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid rgba(15,14,11,.09); display: flex; flex-direction: column; gap: .2rem; transition: border-color .3s; }
-.p-proof-num { font-family: var(--fd); font-weight: 900; font-size: clamp(1.4rem, 2vw, 1.9rem); line-height: 1; letter-spacing: -.03em; transition: color .3s; }
-.p-proof-label { font-size: .7rem; line-height: 1.4; color: var(--muted); transition: color .3s; }
+.p-proof-num { font-family: var(--fd); font-weight: 900; font-size: clamp(1.6rem, 2.2vw, 2rem); line-height: 1; letter-spacing: -.03em; transition: color .3s; }
+.p-proof-label { font-size: .92rem; line-height: 1.45; color: var(--muted); transition: color .3s; }
 
 .proj-right { display: flex; flex-direction: column; gap: .85rem; }
-.p-text { font-size: .85rem; line-height: 1.74; color: var(--ink2); transition: color .3s; }
+.p-text { font-size: 1rem; line-height: 1.78; color: var(--ink2); transition: color .3s; }
 .p-text strong { color: var(--ink); font-weight: 500; transition: color .3s; }
 
 .p-img {
@@ -248,10 +248,10 @@ nav {
 .cap-row { padding: 1.8rem 0; border-top: 1px solid rgba(15,14,11,.11); display: grid; grid-template-columns: 1fr 1.6fr; gap: 2rem; }
 .cap-row:last-child { border-bottom: 1px solid rgba(15,14,11,.11); }
 .cap-row:hover .cap-row-title { color: var(--red); }
-.cap-row-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 700; padding-top: .15rem; transition: color .22s; letter-spacing: -.01em; }
-.cap-items { display: flex; flex-direction: column; gap: .45rem; }
-.cap-items span { font-size: .8rem; line-height: 1.5; color: var(--ink2); padding-left: 1rem; position: relative; }
-.cap-items span::before { content: '\2192'; position: absolute; left: 0; color: var(--gold); font-size: .68rem; }
+.cap-row-title { font-family: var(--fd); font-size: 1.25rem; font-weight: 700; padding-top: .15rem; transition: color .22s; letter-spacing: -.01em; }
+.cap-items { display: flex; flex-direction: column; gap: .55rem; }
+.cap-items span { font-size: .96rem; line-height: 1.6; color: var(--ink2); padding-left: 1rem; position: relative; }
+.cap-items span::before { content: '\2192'; position: absolute; left: 0; color: var(--gold); font-size: .78rem; }
 
 /* CONTACT */
 #contact { background: var(--ink); color: var(--cream); overflow: hidden; position: relative; }
@@ -262,7 +262,7 @@ nav {
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; padding-bottom: 5rem; }
 .contact-h { font-family: var(--fd); font-size: clamp(2.8rem, 5.2vw, 5.8rem); font-weight: 900; line-height: .95; letter-spacing: -.04em; margin-bottom: 1.4rem; }
 .contact-h em { font-style: italic; font-weight: 400; color: rgba(237,232,223,.45); }
-.contact-desc { font-size: .84rem; line-height: 1.72; color: rgba(237,232,223,.7); max-width: 28ch; }
+.contact-desc { font-size: 1.05rem; line-height: 1.8; color: rgba(237,232,223,.78); max-width: 34ch; }
 .c-links { display: flex; flex-direction: column; gap: 1.6rem; }
 .c-link { display: flex; flex-direction: column; gap: .28rem; }
 .c-lbl { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(237,232,223,.5); }
