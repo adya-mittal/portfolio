@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adya Mittal &#8212; Brand Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --cream:  #EDE8DF;
+  --cream2: #E4DDD2;
+  --ink:    #0F0E0B;
+  --ink2:   #3D3A33;
+  --muted:  #8C8779;
+  --red:    #C94C2E;
+  --gold:   #B89A5A;
+  --fd: 'Playfair Display', Georgia, serif;
+  --fb: 'DM Sans', 'Helvetica Neue', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream); color: var(--ink);
+  font-family: var(--fb); font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::after {
+  content: ''; position: fixed; inset: 0;
+  pointer-events: none; z-index: 9000; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 1.6rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background .3s, border-color .3s;
+  border-bottom: 1px solid transparent;
+}
+.nav-logo { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; letter-spacing: .02em; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--red); }
+
+/* HERO */
+#hero {
+  min-height: 100svh; padding: 7rem 3rem 4.5rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; overflow: hidden;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-start;
+  max-width: 680px;
+}
+.hero-name {
+  font-family: var(--fd); font-size: clamp(4.5rem, 11vw, 11.5rem);
+  font-weight: 900; line-height: .88; letter-spacing: -.04em; margin-bottom: 2.6rem;
+}
+.hero-name .surname { font-weight: 400; font-style: italic; color: var(--ink2); display: block; }
+
+/* PILL STACK — sits below the name */
+.pill-stack { position: relative; display: inline-block; padding-top: 2.8rem; margin-bottom: 2rem; }
+.pill-stack .ghost {
+  position: absolute; left: 0;
+  display: inline-flex; align-items: center;
+  border-radius: 999px; padding: .52rem 1.3rem;
+  font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+  font-family: var(--fb); font-weight: 700;
+  white-space: nowrap; pointer-events: none; line-height: 1;
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+/* gold — peeks left and above */
+.pill-stack .ghost-1 {
+  background: #D4A96A; color: #110C02;
+  top: 1.6rem; left: -8px;
+  transform: rotate(-6deg); transform-origin: center bottom; z-index: 1;
+}
+/* sage — peeks right, higher up */
+.pill-stack .ghost-2 {
+  background: #7BA99A; color: #051210;
+  top: 0.7rem; left: 80px;
+  transform: rotate(7deg); transform-origin: center bottom; z-index: 0;
+}
+/* terracotta — furthest right, highest up */
+.pill-stack .ghost-3 {
+  background: #C26B5A; color: #FDFAF8;
+  top: -0.1rem; left: 160px;
+  transform: rotate(-8deg); transform-origin: center bottom; z-index: -1;
+}
+.role-pill {
+  position: relative; z-index: 2;
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: var(--ink); color: var(--cream);
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: .55rem 1.2rem; border-radius: 999px; white-space: nowrap; line-height: 1;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.role-pill .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+
+.hero-tagline {
+  font-family: var(--fd); font-size: clamp(1.3rem, 2vw, 1.72rem);
+  font-style: italic; font-weight: 400; line-height: 1.45; color: var(--ink2);
+}
+
+/* SPINNING BADGE */
+.badge-spin {
+  position: absolute; right: 3rem; top: 50%; transform: translateY(-50%);
+  width: 148px; height: 148px; border-radius: 50%; background: var(--red); z-index: 3;
+}
+.badge-spin svg { width: 148px; height: 148px; animation: rspin 16s linear infinite; display: block; }
+.badge-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--cream); font-size: 1.6rem; }
+@keyframes rspin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* MARQUEE */
+.marquee { background: var(--ink); padding: .92rem 0; overflow: hidden; white-space: nowrap; }
+.marquee-inner { display: inline-flex; animation: marq 22s linear infinite; }
+.marquee-inner span { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--cream); padding: 0 2rem; font-family: var(--fb); opacity: .8; }
+.marquee-inner span.sep { color: var(--red); opacity: 1; padding: 0; letter-spacing: 0; }
+@keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* IMPACT STRIP */
+.impact-strip {
+  background: var(--cream2);
+  border-bottom: 1px solid rgba(15,14,11,.1);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.impact-item { padding: 2.2rem 3rem; border-right: 1px solid rgba(15,14,11,.1); display: flex; flex-direction: column; gap: .35rem; }
+.impact-item:last-child { border-right: none; }
+.impact-num { font-family: var(--fd); font-weight: 900; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1; letter-spacing: -.03em; color: var(--ink); }
+.impact-num span { color: var(--red); }
+.impact-label { font-size: .72rem; line-height: 1.45; color: var(--muted); max-width: 16ch; }
+
+/* SECTION HELPERS */
+.wrap { padding: 6rem 3rem; }
+.eyebrow { display: flex; align-items: center; gap: 1rem; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 3.5rem; }
+.eyebrow .n { font-family: var(--fd); font-style: italic; font-size: .88rem; color: var(--gold); }
+.eyebrow::after { content: ''; flex: 1; height: 1px; background: rgba(15,14,11,.11); }
+
+/* ABOUT */
+#about { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5.5rem; align-items: start; }
+.about-sticky { position: sticky; top: 6rem; }
+.about-h { font-family: var(--fd); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 900; line-height: .93; letter-spacing: -.03em; }
+.about-h em { display: block; font-style: italic; font-weight: 400; color: var(--muted); }
+.about-body { display: flex; flex-direction: column; }
+.about-lede { font-family: var(--fd); font-size: clamp(1.05rem, 1.6vw, 1.35rem); font-weight: 400; line-height: 1.65; color: var(--ink2); margin-bottom: 1.4rem; }
+.about-lede strong { color: var(--ink); font-weight: 700; }
+.about-timeline { display: flex; flex-direction: column; gap: .9rem; padding-top: 1.5rem; margin-top: .5rem; border-top: 1px solid rgba(15,14,11,.1); }
+.tl-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: baseline; }
+.tl-date { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; font-family: var(--fd); font-style: italic; }
+.tl-role { font-size: .82rem; color: var(--ink2); line-height: 1.4; }
+.tl-role strong { font-weight: 500; color: var(--ink); }
+.pill-row { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.pill-row span { font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; border: 1px solid rgba(15,14,11,.16); border-radius: 999px; padding: .3rem .82rem; color: var(--ink2); }
+
+/* WORK */
+#work { background: var(--cream2); }
+.work-header { margin-bottom: 4rem; }
+.work-h { font-family: var(--fd); font-size: clamp(2.8rem, 6vw, 6.5rem); font-weight: 900; line-height: .9; letter-spacing: -.04em; }
+.work-h em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+.proj-list { display: flex; flex-direction: column; }
+.proj-row {
+  display: grid; grid-template-columns: 13rem 1fr;
+  gap: 3.5rem; padding: 3rem 0;
+  border-top: 1px solid rgba(15,14,11,.11);
+  position: relative; cursor: default;
+}
+.proj-row:last-child { border-bottom: 1px solid rgba(15,14,11,.11); }
+.proj-row::before {
+  content: ''; position: absolute; left: -3rem; right: -3rem; top: 0; bottom: 0;
+  background: var(--ink); opacity: 0; transition: opacity .32s; z-index: 0;
+}
+.proj-row:hover::before { opacity: 1; }
+.proj-row > * { position: relative; z-index: 1; }
+
+.proj-left { display: flex; flex-direction: column; gap: .3rem; padding-top: .1rem; }
+.p-n { font-family: var(--fd); font-style: italic; font-size: .85rem; color: var(--muted); margin-bottom: .15rem; transition: color .3s; }
+.p-title { font-family: var(--fd); font-size: clamp(1.25rem, 1.8vw, 1.65rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; transition: color .3s; }
+.p-cat { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; margin-top: .15rem; transition: color .3s; }
+.p-proof { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid rgba(15,14,11,.09); display: flex; flex-direction: column; gap: .2rem; transition: border-color .3s; }
+.p-proof-num { font-family: var(--fd); font-weight: 900; font-size: clamp(1.4rem, 2vw, 1.9rem); line-height: 1; letter-spacing: -.03em; transition: color .3s; }
+.p-proof-label { font-size: .7rem; line-height: 1.4; color: var(--muted); transition: color .3s; }
+
+.proj-right { display: flex; flex-direction: column; gap: .85rem; }
+.p-text { font-size: .85rem; line-height: 1.74; color: var(--ink2); transition: color .3s; }
+.p-text strong { color: var(--ink); font-weight: 500; transition: color .3s; }
+
+.p-img {
+  width: 100%; aspect-ratio: 16/9;
+  border-radius: 4px; overflow: hidden;
+  background: rgba(15,14,11,.05);
+  display: flex; align-items: center; justify-content: center;
+}
+.p-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .3s; }
+.p-img-placeholder { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* BRAND COLOURS */
+.proj-foodstories { background: rgba(90,130,90,.08); border-left: 3px solid #5A8559; }
+.proj-foodstories .p-n { color: #5A8559; }
+.proj-foodstories .p-cat { color: #5A8559; }
+.proj-foodstories .p-title { color: #3D6B3C; }
+.proj-foodstories .p-proof-num { color: #5A8559; }
+
+.proj-urban { background: rgba(40,105,95,.08); border-left: 3px solid #28695F; }
+.proj-urban .p-n { color: #28695F; }
+.proj-urban .p-cat { color: #28695F; }
+.proj-urban .p-title { color: #1A4F47; }
+.proj-urban .p-proof-num { color: #28695F; }
+
+.proj-taj { background: rgba(162,98,38,.08); border-left: 3px solid #A26226; }
+.proj-taj .p-n { color: #A26226; }
+.proj-taj .p-cat { color: #A26226; }
+.proj-taj .p-title { color: #7A4A1C; }
+.proj-taj .p-proof-num { color: #A26226; }
+
+.proj-ace { background: rgba(70,105,155,.08); border-left: 3px solid #46699B; }
+.proj-ace .p-n { color: #46699B; }
+.proj-ace .p-cat { color: #46699B; }
+.proj-ace .p-title { color: #2E4F7A; }
+.proj-ace .p-proof-num { color: #46699B; }
+
+.proj-row:hover { border-left-color: transparent; }
+.proj-row:hover .p-n { color: rgba(237,232,223,.35) !important; }
+.proj-row:hover .p-title { color: var(--gold) !important; }
+.proj-row:hover .p-cat { color: rgba(237,232,223,.38) !important; }
+.proj-row:hover .p-proof-num { color: var(--gold) !important; }
+.proj-row:hover .p-proof-label { color: rgba(237,232,223,.38) !important; }
+.proj-row:hover .p-text { color: rgba(237,232,223,.78) !important; }
+.proj-row:hover .p-text strong { color: rgba(237,232,223,.95) !important; }
+.proj-row:hover .p-proof { border-color: rgba(237,232,223,.1) !important; }
+.proj-row:hover .p-img img { opacity: .7; }
+
+/* CAPABILITIES */
+#capabilities { background: var(--cream); }
+.cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: start; }
+.cap-left { position: sticky; top: 6rem; }
+.cap-h { font-family: var(--fd); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 900; line-height: .92; letter-spacing: -.03em; margin-bottom: 1.25rem; }
+.cap-h em { display: block; font-style: italic; font-weight: 400; color: var(--muted); }
+.cap-big-letter { font-family: var(--fd); font-weight: 900; font-size: clamp(7rem, 13vw, 13rem); color: transparent; -webkit-text-stroke: 1.5px rgba(15,14,11,.08); line-height: 1; letter-spacing: -.04em; margin-top: 1rem; pointer-events: none; user-select: none; }
+.cap-rows { display: flex; flex-direction: column; }
+.cap-row { padding: 1.8rem 0; border-top: 1px solid rgba(15,14,11,.11); display: grid; grid-template-columns: 1fr 1.6fr; gap: 2rem; }
+.cap-row:last-child { border-bottom: 1px solid rgba(15,14,11,.11); }
+.cap-row:hover .cap-row-title { color: var(--red); }
+.cap-row-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 700; padding-top: .15rem; transition: color .22s; letter-spacing: -.01em; }
+.cap-items { display: flex; flex-direction: column; gap: .45rem; }
+.cap-items span { font-size: .8rem; line-height: 1.5; color: var(--ink2); padding-left: 1rem; position: relative; }
+.cap-items span::before { content: '\2192'; position: absolute; left: 0; color: var(--gold); font-size: .68rem; }
+
+/* CONTACT */
+#contact { background: var(--ink); color: var(--cream); overflow: hidden; position: relative; }
+#contact .eyebrow { color: rgba(237,232,223,.4); }
+#contact .eyebrow::after { background: rgba(237,232,223,.1); }
+#contact .eyebrow .n { color: var(--gold); }
+.contact-bg { position: absolute; font-family: var(--fd); font-weight: 900; font-size: clamp(9rem, 20vw, 20rem); color: transparent; -webkit-text-stroke: 1px rgba(237,232,223,.04); bottom: -1.5rem; right: -1vw; pointer-events: none; user-select: none; line-height: 1; letter-spacing: -.04em; white-space: nowrap; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; padding-bottom: 5rem; }
+.contact-h { font-family: var(--fd); font-size: clamp(2.8rem, 5.2vw, 5.8rem); font-weight: 900; line-height: .95; letter-spacing: -.04em; margin-bottom: 1.4rem; }
+.contact-h em { font-style: italic; font-weight: 400; color: rgba(237,232,223,.45); }
+.contact-desc { font-size: .84rem; line-height: 1.72; color: rgba(237,232,223,.7); max-width: 28ch; }
+.c-links { display: flex; flex-direction: column; gap: 1.6rem; }
+.c-link { display: flex; flex-direction: column; gap: .28rem; }
+.c-lbl { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(237,232,223,.5); }
+.c-link a { font-family: var(--fd); font-size: clamp(1.3rem, 1.9vw, 1.8rem); font-style: italic; font-weight: 400; color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(237,232,223,.2); padding-bottom: .18rem; display: inline-block; transition: color .2s, border-color .2s; }
+.c-link a:hover { color: var(--gold); border-color: var(--gold); }
+.foot { border-top: 1px solid rgba(237,232,223,.1); padding: 1.4rem 3rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+.foot span { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(237,232,223,.35); }
+.foot span em { font-style: normal; color: var(--gold); }
+
+/* REVEALS */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .72s cubic-bezier(.25,.1,.25,1), transform .72s cubic-bezier(.25,.1,.25,1); }
+.reveal.on { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .wrap { padding: 4.5rem 1.5rem; }
+  #hero { padding: 6rem 1.5rem 3.5rem; }
+  .hero-content { max-width: 100%; }
+  .badge-spin { display: none; }
+  .impact-strip { grid-template-columns: 1fr 1fr; }
+  .impact-item:nth-child(2) { border-right: none; }
+  .impact-item { padding: 1.8rem 1.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-sticky { position: static; }
+  .proj-row { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cap-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cap-left { position: static; }
+  .cap-big-letter { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3.5rem; }
+  .foot { padding: 1.4rem 1.5rem; flex-wrap: wrap; gap: .5rem; }
+}
+@media (max-width: 600px) {
+  .impact-strip { grid-template-columns: 1fr 1fr; }
+  .cap-row { grid-template-columns: 1fr; gap: .6rem; }
+  .nav-links li:nth-child(2), .nav-links li:nth-child(3) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-logo">Adya Mittal.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#capabilities">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="badge-spin" aria-hidden="true">
+    <svg viewBox="0 0 148 148">
+      <defs><path id="cp" d="M74,74 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+      <text fill="rgba(237,232,223,0.95)" font-size="11.5" font-family="DM Sans,sans-serif" font-weight="600" letter-spacing="7">
+        <textPath href="#cp">BRANDING &#10022; MARKETING &#10022;</textPath>
+      </text>
+    </svg>
+    <div class="badge-center">&#10022;</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-name reveal">Adya<br /><span class="surname">Mittal.</span></div>
+    <div class="pill-stack reveal d1">
+      <span class="ghost ghost-3">Strategic Thinking</span>
+      <span class="ghost ghost-2">Creative Direction</span>
+      <span class="ghost ghost-1">Brand Strategy</span>
+      <div class="role-pill"><span class="dot"></span>Brand Partner &#8212; Please See//</div>
+    </div>
+    <p class="hero-tagline reveal d2">Insight to idea.<br />Brief to brand world.<br />Strategy to shelf.</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>Brand Strategy</span><span class="sep"> &#10022; </span>
+    <span>Campaign Development</span><span class="sep"> &#10022; </span>
+    <span>Retail and Store Design</span><span class="sep"> &#10022; </span>
+    <span>Social Media Marketing</span><span class="sep"> &#10022; </span>
+    <span>Influencer Marketing</span><span class="sep"> &#10022; </span>
+    <span>Brand Positioning</span><span class="sep"> &#10022; </span>
+    <span>Brand Strategy</span><span class="sep"> &#10022; </span>
+    <span>Campaign Development</span><span class="sep"> &#10022; </span>
+    <span>Retail and Store Design</span><span class="sep"> &#10022; </span>
+    <span>Social Media Marketing</span><span class="sep"> &#10022; </span>
+    <span>Influencer Marketing</span><span class="sep"> &#10022; </span>
+    <span>Brand Positioning</span><span class="sep"> &#10022; </span>
+  </div>
+</div>
+
+<div class="impact-strip">
+  <div class="impact-item reveal">
+    <div class="impact-num">15<span>+</span></div>
+    <div class="impact-label">Campaigns led across brands and categories</div>
+  </div>
+  <div class="impact-item reveal d1">
+    <div class="impact-num">50<span>%+</span></div>
+    <div class="impact-label">Account value growth on a single brand</div>
+  </div>
+  <div class="impact-item reveal d2">
+    <div class="impact-num">3</div>
+    <div class="impact-label">Store launches managed for a retail brand</div>
+  </div>
+  <div class="impact-item reveal d3">
+    <div class="impact-num">3</div>
+    <div class="impact-label">New briefs won from one project&#8217;s results</div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow"><span class="n">01</span> About</div>
+    <div class="about-grid">
+      <div class="about-sticky reveal">
+        <h2 class="about-h">How<br />I<br /><em>Think.</em></h2>
+      </div>
+      <div class="about-body reveal d1">
+        <p class="about-lede">I&#8217;m a brand and marketing professional with experience across F&amp;B, FMCG, fashion, wellness, and lifestyle. I&#8217;ve worked on brand strategy, campaigns, retail experiences, social, influencer, and product launches &#8212; often <strong>across all of these at once</strong>, for the same brand.</p>
+        <p class="about-lede">At Please See//, I own accounts end-to-end &#8212; writing the brief, guiding the team, managing the client, and seeing the work through to launch. Some of my favourite moments have been when the work we delivered opened up a conversation the brand wasn&#8217;t expecting to have &#8212; and that&#8217;s usually where the most interesting work begins. <strong>My instinct is always to go one level deeper than the brief &#8212; to understand what the brand actually needs, not just what&#8217;s been asked for.</strong></p>
+        <div class="about-timeline">
+          <div class="tl-item">
+            <span class="tl-date">Dec 2025 &#8211; Present</span>
+            <span class="tl-role"><strong>Brand Partner</strong> &#8212; Please See//</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Aug 2024 &#8211; Dec 2025</span>
+            <span class="tl-role"><strong>Junior Brand Partner</strong> &#8212; Please See//</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Jan &#8211; Mar 2024</span>
+            <span class="tl-role"><strong>Brand Solutions Intern</strong> &#8212; Schbang</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Jun &#8211; Jul 2023</span>
+            <span class="tl-role"><strong>Brand Manager</strong> &#8212; Kavith</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">Jun &#8211; Jul 2023</span>
+            <span class="tl-role"><strong>Brand Manager</strong> &#8212; Mukti &amp; Kavith Casa</span>
+          </div>
+        </div>
+        <div class="pill-row">
+          <span>F&amp;B</span><span>FMCG</span><span>Wellness</span><span>Lifestyle</span><span>Fashion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow"><span class="n">02</span> Selected Work</div>
+    <div class="work-header">
+      <h2 class="work-h reveal">Where the<br /><em>Thinking</em><br />Went.</h2>
+    </div>
+    <div class="proj-list">
+
+      <div class="proj-row proj-foodstories reveal">
+        <div class="proj-left">
+          <div class="p-n">01</div>
+          <div class="p-title">FoodStories India</div>
+          <div class="p-cat">Premium Grocery Retail</div>
+          <div class="p-proof">
+            <div class="p-proof-num">3</div>
+            <div class="p-proof-label">New store launches managed</div>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="p-img">
+            <img src="foodstories.jpeg" alt="FoodStories India store front" loading="lazy" />
+          </div>
+          <p class="p-text">The idea was to position food as a form of self-expression &#8212; that what you choose to eat, discover, and bring home says something about who you are. Every section, every seasonal moment, every label was built around that belief.</p>
+          <p class="p-text"><strong>Brand identity &#183; Packaging design &#183; Caf&#233; identity &amp; design &#183; Section-level strategy &#183; In-store experience design &#183; Store launches</strong></p>
+        </div>
+      </div>
+
+      <div class="proj-row proj-urban reveal">
+        <div class="proj-left">
+          <div class="p-n">02</div>
+          <div class="p-title">Urban Jungle</div>
+          <div class="p-cat">Luggage &amp; Travel</div>
+          <div class="p-proof">
+            <div class="p-proof-num">360&#176;</div>
+            <div class="p-proof-label">Campaign for a Netflix Stranger Things collab &#8212; concept to execution</div>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="p-img">
+            <img src="urban-jungle.png" alt="Urban Jungle x Stranger Things collaboration" loading="lazy" />
+          </div>
+          <p class="p-text">The creative thinking was rooted in giving the brand a personality before giving it a campaign &#8212; so every touchpoint, from a product page to a live activation, felt like it came from the same place.</p>
+          <p class="p-text"><strong>Brand refresh &#183; Visual identity &#183; Social strategy &#183; Website &amp; e-commerce &#183; Product launches &#183; Brand collaborations &#183; Influencer marketing &#183; Brand activations &#183; Amazon brand store</strong></p>
+        </div>
+      </div>
+
+      <div class="proj-row proj-taj reveal">
+        <div class="proj-left">
+          <div class="p-n">03</div>
+          <div class="p-title">Taj Mahal Tea House</div>
+          <div class="p-cat">Heritage F&amp;B</div>
+          <div class="p-proof">
+            <div class="p-proof-num">3<span style="font-size:.6em">+</span></div>
+            <div class="p-proof-label">New projects received from the gifting work</div>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="p-img">
+            <img src="tmth.png" alt="Taj Mahal Tea House gift boxes" loading="lazy" />
+          </div>
+          <p class="p-text">The creative challenge was to make a legacy brand feel current without making it feel like it was trying to be &#8212; letting the depth of the brand do the work rather than covering it with something new.</p>
+          <p class="p-text"><strong>In-store experience design &#183; Retail communication &#183; Menu design &#183; Gifting strategy &amp; execution</strong></p>
+        </div>
+      </div>
+
+      <div class="proj-row proj-ace reveal">
+        <div class="proj-left">
+          <div class="p-n">04</div>
+          <div class="p-title">Ace Blend</div>
+          <div class="p-cat">Nutrition &amp; Supplements</div>
+          <div class="p-proof">
+            <div class="p-proof-num">3</div>
+            <div class="p-proof-label">Digital product launches led end-to-end</div>
+          </div>
+        </div>
+        <div class="proj-right">
+          <div class="p-img">
+            <img src="ace-blend.jpeg" alt="Ace Blend Hydro Hype product range" loading="lazy" />
+          </div>
+          <p class="p-text">In a category full of clinical-looking brands, the approach was to build something that felt like it was made for a person &#8212; not a body. Credibility through clarity, not just through claims.</p>
+          <p class="p-text"><strong>Social media strategy &#183; Visual language redesign &#183; Content system &#183; Digital product launches &#183; 360&#176; campaign ideation &#183; Performance videos</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="eyebrow"><span class="n">03</span> Capabilities</div>
+    <div class="cap-grid">
+      <div class="cap-left reveal">
+        <h2 class="cap-h">What<br /><em>I</em><br />Bring.</h2>
+        <div class="cap-big-letter" aria-hidden="true">A.</div>
+      </div>
+      <div class="cap-rows reveal d1">
+        <div class="cap-row">
+          <div class="cap-row-title">Brand Strategy</div>
+          <div class="cap-items">
+            <span>Brand positioning &amp; identity</span>
+            <span>Visual identity</span>
+            <span>Consumer &amp; competitive research</span>
+            <span>Creative brief development</span>
+            <span>Annual brand planning</span>
+          </div>
+        </div>
+        <div class="cap-row">
+          <div class="cap-row-title">Campaign &amp; Creative</div>
+          <div class="cap-items">
+            <span>360&#176; campaign development</span>
+            <span>Concept decks &amp; visual direction</span>
+            <span>Production &amp; shoot direction</span>
+            <span>Launch strategy (online + offline)</span>
+            <span>Cross-functional team management</span>
+          </div>
+        </div>
+        <div class="cap-row">
+          <div class="cap-row-title">Retail &amp; Experience</div>
+          <div class="cap-items">
+            <span>In-store communications &amp; VM</span>
+            <span>Retail space strategy &amp; launch</span>
+            <span>Experiential &amp; activation design</span>
+            <span>Packaging design &amp; direction</span>
+            <span>POSM &amp; collateral systems</span>
+          </div>
+        </div>
+        <div class="cap-row">
+          <div class="cap-row-title">Social &amp; Content</div>
+          <div class="cap-items">
+            <span>Social media strategy &amp; execution</span>
+            <span>Content system design</span>
+            <span>Influencer marketing (end-to-end)</span>
+            <span>Monthly &amp; quarterly reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow"><span class="n">04</span> Get in Touch</div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 class="contact-h">Let&#8217;s build something <em>worth it.</em></h2>
+        <p class="contact-desc">If you&#8217;re building a brand, relaunching one, or figuring out what it should stand for &#8212; let&#8217;s talk.</p>
+      </div>
+      <div class="c-links reveal d1">
+        <div class="c-link">
+          <span class="c-lbl">Email</span>
+          <a href="mailto:adyamittal8@gmail.com">adyamittal8@gmail.com</a>
+        </div>
+        <div class="c-link">
+          <span class="c-lbl">LinkedIn</span>
+          <a href="https://linkedin.com/in/adyamittal" target="_blank" rel="noopener">linkedin.com/in/adyamittal</a>
+        </div>
+        <div class="c-link">
+          <span class="c-lbl">Based in</span>
+          <a style="pointer-events:none;cursor:default;border-color:transparent;">Mumbai, Maharashtra</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-bg" aria-hidden="true">ADYA</div>
+  <div class="foot">
+    <span>&#169; 2026 Adya Mittal &#183; Mumbai, India</span>
+  </div>
+</section>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -35px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+  document.querySelectorAll('#hero .reveal').forEach(function(el, i) {
+    setTimeout(function() { el.classList.add('on'); }, 80 + i * 130);
+  });
+  var nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function() {
+    var s = window.scrollY > 55;
+    nav.style.background        = s ? 'rgba(237,232,223,0.92)' : 'transparent';
+    nav.style.backdropFilter    = s ? 'blur(14px)' : 'none';
+    nav.style.borderBottomColor = s ? 'rgba(15,14,11,0.1)' : 'transparent';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
