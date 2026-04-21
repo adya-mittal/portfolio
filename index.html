@@ -26,6 +26,7 @@ body {
   font-family: var(--fb); font-weight: 300;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 body::after {
   content: ''; position: fixed; inset: 0;
@@ -298,9 +299,25 @@ nav {
   .foot { padding: 1.4rem 0; flex-wrap: wrap; gap: .5rem; }
 }
 @media (max-width: 600px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: .65rem; }
   .impact-strip { grid-template-columns: 1fr 1fr; }
   .cap-row { grid-template-columns: 1fr; gap: .6rem; }
-  .nav-links li:nth-child(2), .nav-links li:nth-child(3) { display: none; }
+}
+@media (max-width: 480px) {
+  nav { padding: 1rem 0; }
+  .nav-links { gap: 0.8rem; }
+  .nav-links a { font-size: .6rem; }
+  .wrap { padding: 3rem 0; }
+  #hero { padding: 4rem 0 2rem; }
+  .hero-name { font-size: clamp(3rem, 10vw, 8rem); }
+  .role-pill { font-size: .7rem; }
+  .hero-tagline { font-size: clamp(1rem, 2vw, 1.4rem); }
+  .impact-item { padding: 1.5rem 0; }
+  .about-h { font-size: clamp(2rem, 4vw, 4rem); }
+  .work-h { font-size: clamp(2rem, 5vw, 5rem); }
+  .cap-h { font-size: clamp(2rem, 4vw, 4rem); }
+  .contact-h { font-size: clamp(2rem, 4vw, 4rem); }
 }
 </style>
 </head>
